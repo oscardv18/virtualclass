@@ -20,16 +20,6 @@ class CreateAddressTable extends Migration
             $table->string('pais', 90);
             $table->string('urbanizacion', 200);
             $table->string('municipio', 200);
-
-            $table->unsignedBigInteger('information_id')->unique();
-
-            #foreign key
-            $table->foreign('information_id')
-                  ->references('id')
-                  ->on('informations')
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
-
             $table->timestamps();
         });
     }
