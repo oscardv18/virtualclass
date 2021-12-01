@@ -17,6 +17,9 @@ class CreateInformationsTable extends Migration
             $table->id();
             $table->bigInteger('doc_id');
             $table->string('picture', 255);
+
+            $table->unsignedBigInteger('user_id')->unique();
+
             # Foreign key
             $table->foreign('user_id')
                   ->references('id')
