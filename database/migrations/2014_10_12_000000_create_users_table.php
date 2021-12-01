@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
 
+            // relationships one to many
             $table->unsignedBigInteger('rol_id')->nullable();
             $table->foreign('rol_id')
                     ->references('id')

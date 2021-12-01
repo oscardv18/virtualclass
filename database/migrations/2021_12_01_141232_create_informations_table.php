@@ -28,6 +28,8 @@ class CreateInformationsTable extends Migration
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
 
+            //relationships one to one
+
             # Foreign rules fot address table
             $table->unsignedBigInteger('address_id')->unique();
 
