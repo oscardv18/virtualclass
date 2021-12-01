@@ -10,6 +10,8 @@ class Address extends Model
 {
     use HasFactory;
 
+    protected $table = 'address';
+
     public function informations() {
         return $this->hasOne(Informations::class);
     }
