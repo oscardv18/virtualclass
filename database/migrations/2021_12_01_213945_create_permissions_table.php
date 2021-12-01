@@ -16,13 +16,6 @@ class CreatePermissionsTable extends Migration
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-
-            # relationships one to many
-            $table->unsignedBigInteger('rol_id')->nullable();
-            $table->foreign('rol_id')
-                    ->references('id')
-                    ->on('rols')
-                    ->onDelete('set null');
             $table->timestamps();
         });
     }
