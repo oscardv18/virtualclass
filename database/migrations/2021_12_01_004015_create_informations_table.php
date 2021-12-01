@@ -15,7 +15,7 @@ class CreateInformationsTable extends Migration
     {
         Schema::create('informations', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('doc_id');
+            $table->bigInteger('doc_id')->unique();
             $table->string('picture', 255);
 
             $table->unsignedBigInteger('user_id')->unique();
