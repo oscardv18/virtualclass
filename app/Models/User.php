@@ -60,6 +60,6 @@ class User extends Authenticatable
     ];
 
     public function information() {
-        return $this->hasOne("App\Models\User");
+        return $this->hasOne("App\Models\Information");
     }
 }

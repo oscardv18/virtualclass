@@ -10,6 +10,6 @@ class Information extends Model
     use HasFactory;
 
     public function user() {
-        return $this->belongsTo('App\Models\Information');
+        return $this->belongsTo('App\Models\User');
     }
 }
