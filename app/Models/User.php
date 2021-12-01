@@ -10,6 +10,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Informations;
+use App\Models\Rol;
+use App\Models\Post;
 
 class User extends Authenticatable
 {
@@ -60,7 +62,17 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function informations() {
+    ###### RELATIONSHIPS USER ###########
+
+    public function informations() { // with informations table
         return $this->hasOne(Informations::class);
+    }
+
+    public function user() { // with ROL table
+        return $this->belongsTo(Rol::class);
+    }
+
+    public function post() { // with post table
+        return $this->hasMany(Post::class);
     }
 }
