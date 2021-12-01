@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Informations;
 
 class User extends Authenticatable
 {
@@ -59,7 +60,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function information() {
-        return $this->hasOne("App\Models\Information");
+    public function informations() {
+        return $this->hasOne(Informations::class);
     }
 }
