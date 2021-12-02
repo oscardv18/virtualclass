@@ -12,6 +12,7 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\Informations;
 use App\Models\Rol;
 use App\Models\Post;
+use App\Models\Image;
 
 class User extends Authenticatable
 {
@@ -74,5 +75,10 @@ class User extends Authenticatable
 
     public function post() { // with post table
         return $this->hasMany(Post::class);
+    }
+
+    // relacion one to one con image
+    public function image() { // with image table
+        return $this->morphOne(Image::class, 'imageable');
     }
 }
