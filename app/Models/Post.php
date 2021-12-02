@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Video;
+use App\Models\Course;
 
 class Post extends Model
 {
@@ -15,7 +16,11 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function video() { // with ROL table
+    public function video() { // with video table
         return $this->hasMany(Video::class);
+    }
+
+    public function courses() { // with courses table
+        return $this->belongsToMany(Course::class);
     }
 }
