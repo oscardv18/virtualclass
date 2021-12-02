@@ -8,13 +8,14 @@ use App\Models\User;
 use App\Models\Video;
 use App\Models\Course;
 use App\Models\Image;
+use App\Models\File;
 
 class Post extends Model
 {
     use HasFactory;
 
-    public function post() { // with user table
-        return $this->belongsTo(User::class);
+    public function post() { // with post table
+        return $this->belongsTo(User::class); // todo: refactorizar este metodo
     }
 
     public function video() { // with video table
@@ -28,5 +29,10 @@ class Post extends Model
     // relacion one to one con image
     public function image() { // with image table
         return $this->morphOne(Image::class, 'imageable');
+    }
+
+    // relacion one to many polimorfica
+    public function file() {
+        return $this->morphMany(File::class, 'fileable');
     }
 }

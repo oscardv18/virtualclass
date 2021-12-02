@@ -18,4 +18,9 @@ class Course extends Model
     public function posts() { // with posts table
         return $this->belongsToMany(Post::class);
     }
+
+    // relacion many to many polimorfica
+    public function courses() {
+        return $this->morphToMany(Notification::class, 'notificable');
+    }
 }

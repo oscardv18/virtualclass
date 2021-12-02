@@ -81,4 +81,9 @@ class User extends Authenticatable
     public function image() { // with image table
         return $this->morphOne(Image::class, 'imageable');
     }
+
+    // relacion many to many polimorfica
+    public function courses() {
+        return $this->morphToMany(Notification::class, 'notificable');
+    }
 }
