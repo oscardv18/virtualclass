@@ -11,10 +11,12 @@ class Rol extends Model
 {
     use HasFactory;
 
+    // relación one to many con users table
     public function user() {
         return $this->hasMany(User::class);
     }
 
+    // relacion many to many con la tabla permission
     public function permissions() {
         return $this->belongsToMany(Permission::class);
     }

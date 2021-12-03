@@ -10,7 +10,8 @@ class Video extends Model
 {
     use HasFactory;
 
-    public function post() { // with user table
+    // relacion one to many inversa (belongsTo) con la tabla Post
+    public function post() {
         return $this->belongsTo(Post::class);
     }
 }

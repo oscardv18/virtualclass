@@ -13,6 +13,7 @@ use App\Models\Informations;
 use App\Models\Rol;
 use App\Models\Post;
 use App\Models\Image;
+use App\Models\Notification;
 
 class User extends Authenticatable
 {
@@ -65,24 +66,27 @@ class User extends Authenticatable
 
     ###### RELATIONSHIPS USER ###########
 
-    public function informations() { // with informations table
+    // relación one to one con la tabla informations
+    public function informations() {
         return $this->hasOne(Informations::class);
     }
 
-    public function user() { // with ROL table
+    // relacion one to many con la tabla rol (1 usuario puede tener más de 1 rol)
+    public function rol() {
         return $this->belongsTo(Rol::class);
     }
 
-    public function post() { // with post table
+    // relacion one to many con la tabla o modelo Post
+    public function post() {
         return $this->hasMany(Post::class);
     }
 
-    // relacion one to one con image
-    public function image() { // with image table
+    // relacion one to one polimorfica con la tabla image
+    public function image() {
         return $this->morphOne(Image::class, 'imageable');
     }
 
-    // relacion many to many polimorfica
+    // relacion many to many polimorfica con las tablas courses, notifications y notificable
     public function courses() {
         return $this->morphToMany(Notification::class, 'notificable');
     }

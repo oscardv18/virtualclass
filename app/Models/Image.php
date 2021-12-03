@@ -12,8 +12,7 @@ class Image extends Model
 
     use HasFactory;
 
-    // protected $table = 'images';
-
+    // relacion polimorfica one to one con las tablas User, Post e Images
     public function imageable() {
         return $this->morphTo();
     }

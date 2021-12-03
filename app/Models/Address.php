@@ -12,6 +12,7 @@ class Address extends Model
 
     protected $table = 'address';
 
+    // relación one to one con la tabla informations
     public function informations() {
         return $this->hasOne(Informations::class);
     }

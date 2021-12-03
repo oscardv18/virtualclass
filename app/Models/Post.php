@@ -14,24 +14,27 @@ class Post extends Model
 {
     use HasFactory;
 
-    public function post() { // with post table
-        return $this->belongsTo(User::class); // todo: refactorizar este metodo
+    // relacion one to many inversa (belongsTo) con la tabla user
+    public function users() {
+        return $this->belongsTo(User::class);
     }
 
-    public function video() { // with video table
+    // relacion one to many con la tabla video
+    public function video() {
         return $this->hasMany(Video::class);
     }
 
-    public function courses() { // with courses table
+    // relacion many to many con la tabla course
+    public function courses() {
         return $this->belongsToMany(Course::class);
     }
 
-    // relacion one to one con image
-    public function image() { // with image table
+    // relacion one to one polymorgica con Image
+    public function image() {
         return $this->morphOne(Image::class, 'imageable');
     }
 
-    // relacion one to many polimorfica
+    // relacion one to many polimorfica con las tablas Evaluations y Files
     public function file() {
         return $this->morphMany(File::class, 'fileable');
     }

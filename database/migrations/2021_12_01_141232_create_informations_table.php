@@ -18,22 +18,18 @@ class CreateInformationsTable extends Migration
             $table->bigInteger('doc_id')->unique();
             $table->string('picture', 255);
 
-            # foreign rules for users table
+-
             $table->unsignedBigInteger('user_id')->unique();
 
-            # Foreign key
+            //relationships one to one
             $table->foreign('user_id')
                   ->references('id')
                   ->on('users')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
 
-            //relationships one to one
-
-            # Foreign rules fot address table
             $table->unsignedBigInteger('address_id')->unique();
 
-            # Foreign key
             $table->foreign('address_id')
                   ->references('id')
                   ->on('address')

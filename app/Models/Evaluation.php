@@ -11,11 +11,12 @@ class Evaluation extends Model
 {
     use HasFactory;
 
-    public function evaluations() { // with evaluations table
+    // relacion one to many inversa (belongsTo) con la tabla Course
+    public function course() {
         return $this->belongsTo(Course::class);
     }
 
-    // relacion one to many polimorfica
+    // relacion one to many polimorfica con la tabla file y post
     public function file() {
         return $this->morphMany(File::class, 'fileable');
     }

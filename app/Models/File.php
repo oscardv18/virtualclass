@@ -9,6 +9,7 @@ class File extends Model
 {
     use HasFactory;
 
+    // relacion one to many polimorfica con la tablas Post y Evaluations
     public function fileable() {
         return $this->morphTo();
     }
