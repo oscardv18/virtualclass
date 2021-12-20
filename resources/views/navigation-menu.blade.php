@@ -29,7 +29,7 @@
                             </x-jet-nav-link>
                         @endforeach
                     @else
-                            <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                            <x-jet-nav-link class="text-lg font-black text-pink-700" href="{{ route('home') }}" :active="request()->routeIs('home')">
                                 {{ __("Virtualclass")}}
                             </x-jet-nav-link>
                     @endauth
