@@ -21,7 +21,7 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-200">
+        <div class="min-h-screen bg-green-200">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
@@ -33,10 +33,20 @@
                 </header>
             @endif
 
+            {{-- Banner principal --}}
+
+            <div class="relative">
+                {{ $banner }}
+            </div>
+
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
+
+            <div class="static">
+                {{ $footer }}
+            </div>
         </div>
 
         @stack('modals')
