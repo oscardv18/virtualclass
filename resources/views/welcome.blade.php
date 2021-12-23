@@ -573,22 +573,7 @@
 </html> --}}
 
 <x-app-layout>
-    <x-slot name="banner">
+    <div>
         <img class="w-full" src="{{ asset('images/banner-principal.svg') }}" alt="banner">
-        <div class="absolute">
-            <h1>La educación moderna al alcance de tus dedos</h1>
-            <a href="#">Iniciar Clases</a>
-        </div>
-    </x-slot>
-
-    <div class="container p-12 bg-green-500">
-
     </div>
-
-    <x-slot name="footer">
-        <footer class="p-5 bg-yellow-300">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, error sunt similique, possimus minima, quae
-            amet veniam suscipit facere quia natus rerum voluptate soluta. Consectetur omnis sed deserunt animi quod!
-        </footer>
-    </x-slot>
 </x-app-layout>
