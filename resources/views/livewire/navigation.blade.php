@@ -51,16 +51,14 @@ $navs_links = [
                         @auth
 
                             @foreach ($navs_links as $nav_link)
-                                <x-jet-nav-link class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                                    aria-current="page" href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
+                                <x-jet-nav-link aria-current="page" href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
                                     {{ $nav_link['name'] }}
                                 </x-jet-nav-link>
                             @endforeach
 
                         @else
 
-                            <x-jet-nav-link class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                                aria-current="page" href="{{ route('home') }}" :active="request()->routeIs('home')">
+                            <x-jet-nav-link aria-current="page" href="{{ route('home') }}" :active="request()->routeIs('home')">
                                 {{ __('VirtualClass') }}
                             </x-jet-nav-link>
 
