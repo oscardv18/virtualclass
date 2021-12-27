@@ -142,10 +142,10 @@
                         </x-jet-dropdown>
                     @else
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                        <x-jet-nav-link class="text-pink-700" href="{{ route('login') }}" :active="request()->routeIs('login')">
                             {{ __('Login') }}
                         </x-jet-nav-link>
-                        <x-jet-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                        <x-jet-nav-link class="text-pink-700" href="{{ route('register') }}" :active="request()->routeIs('register')">
                             {{ __('Register') }}
                         </x-jet-nav-link>
                     </div>

@@ -15,13 +15,14 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
-<body class="bg-gray-200 font-sans">
+<body class="bg-white font-sans">
 
-    @auth
-        @livewire('navigation')
-    @else
-        @livewire('navigation-menu')
-    @endauth
+
+        @auth
+            @livewire('navigation')
+        @else
+            @livewire('navigation-menu')
+        @endauth
 
         {{-- Banner principal --}}
        <main>
