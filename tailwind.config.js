@@ -15,6 +15,11 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
+        colors: {
+            'pinkwhite': '#D8406D',
+            'bluewhite': '#D3DDFD',
+            'yellowhigh': '#F6BA28',
+        }
     },
 
     plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],

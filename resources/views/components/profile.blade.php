@@ -1,5 +1,5 @@
 <div class="p-6">
-    <div class="p-6 bg-white sm:px-20 flex items-center rounded-lg justify-between m-1">
+    <div class="p-6 bg-indigo-50 sm:px-20 flex items-center rounded-lg justify-between m-1">
         <div class="text-2xl flex flex-row">
             <div>
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -9,7 +9,7 @@
                         alt="{{ Auth::user()->name }}" />
                     {{-- </button> --}}
                 @else
-                    <span class="inline-flex rounded-md">
+                    <span class="inline-flex rounded-md text-white">
                         {{-- <button type="button"
                                 class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none"> --}}
                         {{ Auth::user()->name }}
@@ -37,17 +37,17 @@
             </div>
         </div>
 
-        <div class="order-last bg-gray-200 p-2 rounded-lg flex items-center">
+        <div class="order-last bg-white p-2 rounded-lg flex items-center">
             <x-jet-button>Crear Publicación</x-jet-button>
         </div>
     </div>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 p-6 gap-4">
-    <div class="bg-white rounded-lg p-2 md:hidden">
+    <div class="bg-indigo-50 rounded-lg p-2 md:hidden">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, facere ex libero dignissimos dolorem atque maiores repudiandae. Mollitia libero aliquam quos iusto ipsa autem eveniet odio non excepturi, repudiandae atque?</p>
     </div>
-    <div class="bg-white rounded-lg p-2 grid grid-cols-1 content-center">
-
+    <div class="bg-indigo-50 rounded-lg p-2 grid grid-cols-1 content-center">
+        <h1></h1>
     </div>
 </div>

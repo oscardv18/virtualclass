@@ -15,7 +15,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
-<body class="bg-white font-sans">
+<body class="bg-gray-200 font-sans">
 
 
         @auth
