@@ -26,9 +26,9 @@ class CreateUsersTable extends Migration
             // relationships one to many
             $table->unsignedBigInteger('rol_id')->nullable();
             $table->foreign('rol_id')
-                    ->references('id')
-                    ->on('rols')
-                    ->onDelete('set null');
+            ->references('id')
+            ->on('rols')
+            ->onDelete('set null');
             $table->timestamps();
         });
     }
