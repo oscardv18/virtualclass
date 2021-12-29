@@ -7,32 +7,40 @@ $navs_links = [
     ],
 ];
 @endphp
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-gray-800 border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
+            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('home') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
-                    </a>
+                    <img class="block lg:hidden h-8 w-auto"
+                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+                    <img class="hidden lg:block h-8 w-auto"
+                        src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                        alt="Workflow">
                 </div>
+                <div class="hidden sm:block sm:ml-6 mt-3">
+                    <div class="flex space-x-4">
+                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                        {{-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a> --}}
+                        @auth
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    @auth
-                        @foreach ($navs_links as $nav_link)
-                            <x-jet-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
-                                {{ $nav_link['name'] }}
+                            @foreach ($navs_links as $nav_link)
+                                <x-jet-nav-link aria-current="page" href="{{ $nav_link['route'] }}"
+                                    :active="$nav_link['active']">
+                                    {{ $nav_link['name'] }}
+                                </x-jet-nav-link>
+                            @endforeach
+
+                        @else
+
+                            <x-jet-nav-link aria-current="page" href="{{ route('home') }}"
+                                :active="request()->routeIs('home')">
+                                {{ __('VirtualClass') }}
                             </x-jet-nav-link>
-                        @endforeach
-                    @else
-                        <x-jet-nav-link class="text-lg font-black text-pink-700" href="{{ route('home') }}"
-                            :active="request()->routeIs('home')">
-                            {{ __('Virtualclass') }}
-                        </x-jet-nav-link>
-                    @endauth
+
+                        @endauth
+                    </div>
                 </div>
             </div>
 
@@ -206,7 +214,7 @@ $navs_links = [
                     @endif
 
                     <div>
-                        <div class="text-base font-medium text-gray-800">{{ Auth::user()->name }}</div>
+                        <div class="text-base font-medium text-white">{{ Auth::user()->name }}</div>
                         <div class="text-sm font-medium text-gray-500">{{ Auth::user()->email }}</div>
                     </div>
                 </div>

@@ -18,11 +18,11 @@
 <body class="bg-gray-200 font-sans">
 
 
-        @auth
-            @livewire('navigation')
-        @else
+        {{-- @auth --}}
+            {{-- @livewire('navigation') --}}
+        {{-- @else --}}
             @livewire('navigation-menu')
-        @endauth
+        {{-- @endauth --}}
 
         {{-- Banner principal --}}
        <main>

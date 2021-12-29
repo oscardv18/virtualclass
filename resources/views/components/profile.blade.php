@@ -1,4 +1,4 @@
-<div class="p-6">
+<div class="p-2">
     <div class="p-6 bg-indigo-50 sm:px-20 flex items-center rounded-lg justify-between m-1">
         <div class="text-2xl flex flex-row">
             <div>
@@ -43,11 +43,49 @@
     </div>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 p-6 gap-4">
-    <div class="bg-indigo-50 rounded-lg p-2 md:hidden">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, facere ex libero dignissimos dolorem atque maiores repudiandae. Mollitia libero aliquam quos iusto ipsa autem eveniet odio non excepturi, repudiandae atque?</p>
+<div class="flex p-2 gap-4">
+    <div class="rounded-lg gap-4 w-3/4 order-1 flex flex-col">
+        <div class="bg-indigo-50 p-2 rounded-lg">
+            <section>
+                <header>
+                    <h4 class="text-gray-900 font-black text-center">CARTELERA INFORMATIVA</h4>
+                </header>
+                <article>
+                    <p>Lorem ipsum. dolor sit amet consectetur adipisicing elit. Fugit architecto vel hic, quia ex velit ipsa? Voluptas nemo facilis, impedit voluptatum asperiores fugit illum architecto dolorem commodi recusandae? Sint, odit.</p>
+                </article>
+            </section>
+        </div>
+        <div class="bg-indigo-50 p-2 rounded-lg">
+            <section>
+                <header>
+                    <h4 class="text-gray-900 font-black text-center">CARTELERA INFORMATIVA</h4>
+                </header>
+                <article>
+                    <p>Lorem ipsum. dolor sit amet consectetur adipisicing elit. Fugit architecto vel hic, quia ex velit ipsa? Voluptas nemo facilis, impedit voluptatum asperiores fugit illum architecto dolorem commodi recusandae? Sint, odit.</p>
+                </article>
+            </section>
+        </div>
     </div>
-    <div class="bg-indigo-50 rounded-lg p-2 grid grid-cols-1 content-center">
-        <h1></h1>
+    <div class="rounded-lg order-last flex flex-col gap-4">
+        <div class="bg-indigo-50 p-2 rounded-lg">
+            <section>
+                <header>
+                    <h4 class="text-gray-900 font-black text-center">Post Title</h4>
+                </header>
+                <article>
+                    <p>Lorem ipsum. dolor sit amet consectetur adipisicing elit. Fugit architecto vel hic, quia ex velit ipsa? Voluptas nemo facilis, impedit voluptatum asperiores fugit illum architecto dolorem commodi recusandae? Sint, odit.</p>
+                </article>
+            </section>
+        </div>
+        <div class="bg-indigo-50 p-2 rounded-lg">
+            <section>
+                <header>
+                    <h4 class="text-gray-900 font-black text-center">Post Title</h4>
+                </header>
+                <article>
+                    <p>Lorem ipsum. dolor sit amet consectetur adipisicing elit. Fugit architecto vel hic, quia ex velit ipsa? Voluptas nemo facilis, impedit voluptatum asperiores fugit illum architecto dolorem commodi recusandae? Sint, odit.</p>
+                </article>
+            </section>
+        </div>
     </div>
 </div>
