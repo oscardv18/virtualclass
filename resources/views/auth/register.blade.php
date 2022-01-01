@@ -21,7 +21,7 @@
 
             <div class="mt-4">
                 <x-jet-label for="rol_id" value="{{ __('Seleccione Rol: 1-Institución 2-Docente 3-Estudiante') }}" />
-                <x-jet-input id="rol_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" type="rol_id" name="rol_id" :value="old('rol_id')" required />
+                <x-jet-input id="rol_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" type="text" name="rol_id" :value="old('rol_id')" required />
             </div>
 
             <div class="mt-4">

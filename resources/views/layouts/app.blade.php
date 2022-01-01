@@ -13,25 +13,36 @@
     @livewireStyles
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="bg-gray-200 font-sans">
 
 
-        {{-- @auth --}}
-            {{-- @livewire('navigation') --}}
-        {{-- @else --}}
-            @livewire('navigation-menu')
-        {{-- @endauth --}}
+    {{-- @auth --}}
+    {{-- @livewire('navigation') --}}
+    {{-- @else --}}
+    @livewire('navigation-menu')
+    {{-- @endauth --}}
 
-        {{-- Banner principal --}}
-       <main>
-           {{ $slot }}
-       </main>
+    {{-- Banner principal --}}
+    <main>
+        {{ $slot }}
+    </main>
 
     @stack('modals')
 
     @livewireScripts
+
+    <script>
+        Livewire.on('alert', (message) => {
+            Swal.fire(
+                'Good job!',
+                 message,
+                'success'
+            )
+        })
+    </script>
 </body>
 
 </html>

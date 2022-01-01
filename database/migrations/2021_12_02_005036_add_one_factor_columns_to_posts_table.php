@@ -14,7 +14,7 @@ class AddOneFactorColumnsToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('image', 255)->after('content');
+            $table->string('image_photo', 2048)->nullable()->after('content');
         });
     }
 

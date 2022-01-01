@@ -14,6 +14,10 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title', 'description', 'content',
+    ];
+
     // relacion one to many inversa (belongsTo) con la tabla user
     public function users() {
         return $this->belongsTo(User::class);

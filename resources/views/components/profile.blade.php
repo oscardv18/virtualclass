@@ -1,11 +1,11 @@
 <div class="p-2">
     <div class="p-6 bg-indigo-50 sm:px-20 flex items-center rounded-lg justify-between m-1">
-        <div class="text-2xl flex flex-row">
+        <div class="text-2xl flex md:flex-row sm:flex-col">
             <div>
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     {{-- <button
                             class="flex text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300"> --}}
-                    <img class="object-cover w-20 h-20 rounded-full" src="{{ Auth::user()->profile_photo_url }}"
+                    <img class="object-cover w-20 h-20 h-auto rounded-full" src="{{ Auth::user()->profile_photo_url }}"
                         alt="{{ Auth::user()->name }}" />
                     {{-- </button> --}}
                 @else
@@ -29,22 +29,21 @@
                     {{ Auth::user()->name }}
                 </span>
                 <p class="text-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-                <p class="text-sm">
-                    Lorem ipsum dolor sit amet.
+                    {{ Auth::user()->email }}
                 </p>
             </div>
         </div>
 
-        <div class="order-last bg-white p-2 rounded-lg flex items-center">
-            <x-jet-button>Crear Publicación</x-jet-button>
+        <div class="order-last bg-white p-2 rounded-lg flex items-center" x-data="{ open: false }">
+            {{-- <div x-show="open" @click.away="open = false"> --}}
+                @livewire('create-posts')
+            {{-- </div> --}}
         </div>
     </div>
 </div>
 
 <div class="flex p-2 gap-4">
-    <div class="rounded-lg gap-4 w-3/4 order-1 flex flex-col">
+    <div class="rounded-lg gap-4 order-1 flex flex-col">
         <div class="bg-indigo-50 p-2 rounded-lg">
             <section>
                 <header>
@@ -66,26 +65,7 @@
             </section>
         </div>
     </div>
-    <div class="rounded-lg order-last flex flex-col gap-4">
-        <div class="bg-indigo-50 p-2 rounded-lg">
-            <section>
-                <header>
-                    <h4 class="text-gray-900 font-black text-center">Post Title</h4>
-                </header>
-                <article>
-                    <p>Lorem ipsum. dolor sit amet consectetur adipisicing elit. Fugit architecto vel hic, quia ex velit ipsa? Voluptas nemo facilis, impedit voluptatum asperiores fugit illum architecto dolorem commodi recusandae? Sint, odit.</p>
-                </article>
-            </section>
-        </div>
-        <div class="bg-indigo-50 p-2 rounded-lg">
-            <section>
-                <header>
-                    <h4 class="text-gray-900 font-black text-center">Post Title</h4>
-                </header>
-                <article>
-                    <p>Lorem ipsum. dolor sit amet consectetur adipisicing elit. Fugit architecto vel hic, quia ex velit ipsa? Voluptas nemo facilis, impedit voluptatum asperiores fugit illum architecto dolorem commodi recusandae? Sint, odit.</p>
-                </article>
-            </section>
-        </div>
+    <div class="rounded-lg w-3/4 order-last flex flex-col gap-4">
+        @livewire('show-posts')
     </div>
 </div>

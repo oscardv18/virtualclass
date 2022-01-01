@@ -1,9 +1,9 @@
 @php
 $navs_links = [
     [
-        'name' => 'Dashboard',
-        'route' => route('dashboard'),
-        'active' => request()->routeIs('dashboard'),
+        'name' => 'Mi Perfil',
+        'route' => route('profile'),
+        'active' => request()->routeIs('profile'),
     ],
 ];
 @endphp
@@ -21,9 +21,7 @@ $navs_links = [
                 </div>
                 <div class="hidden sm:block sm:ml-6 mt-3">
                     <div class="flex space-x-4">
-                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        {{-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a> --}}
-                        @auth
+                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->                        @auth
 
                             @foreach ($navs_links as $nav_link)
                                 <x-jet-nav-link aria-current="page" href="{{ $nav_link['route'] }}"
@@ -139,7 +137,7 @@ $navs_links = [
                                 </div>
 
                                 <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                    {{ __('Profile') }}
+                                    {{ __('Administrar Perfil') }}
                                 </x-jet-dropdown-link>
 
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -223,7 +221,7 @@ $navs_links = [
                     <!-- Account Management -->
                     <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
                         :active="request()->routeIs('profile.show')">
-                        {{ __('Profile') }}
+                        {{ __('Administrar Perfil') }}
                     </x-jet-responsive-nav-link>
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
