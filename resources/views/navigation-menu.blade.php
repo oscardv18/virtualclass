@@ -5,12 +5,17 @@ $navs_links = [
         'route' => route('profile'),
         'active' => request()->routeIs('profile'),
     ],
+    [
+        'name' => 'Home',
+        'route' => '#',
+        'active' => request()->routeIs('home'),
+    ],
 ];
 @endphp
 <nav x-data="{ open: false }" class="bg-gray-800 border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="relative flex items-center justify-between h-16">
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
                     <img class="block lg:hidden h-8 w-auto"
@@ -19,7 +24,7 @@ $navs_links = [
                         src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                         alt="Workflow">
                 </div>
-                <div class="hidden sm:block sm:ml-6 mt-3">
+                <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->                        @auth
 
