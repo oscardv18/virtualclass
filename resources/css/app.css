@@ -1,3 +1,61 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+.pinkwhite {
+    background-color: #D8406D;
+}
+
+.text-pinkwhite {
+    color: #D8406D;
+}
+
+.bluewhite {
+    background-color: #d3ddfd;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+.overflow-x-scroll {
+    overflow-x: scroll;
+}
+
+.overflow-y-scroll {
+    overflow-y: scroll;
+}
+
+
+/*
+w-2/5	width: 40%;
+w-3/5	width: 60%;
+*/
+
+.w-2\/5 {
+    width: 40%;
+}
+
+.w-3\/5 {
+    width: 60%;
+}
+
+
+/*
+rounded-xl	border-radius: 0.75rem;
+rounded-2xl	border-radius: 1rem; */
+
+.rounded-xl {
+    border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+    border-radius: 1rem;
+}

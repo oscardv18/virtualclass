@@ -42,6 +42,20 @@
                 'success'
             )
         })
+        Livewire.on('delete-alert', (message) => {
+            Swal.fire(
+                'Good job!',
+                 message,
+                'success'
+            )
+        })
+        Livewire.on('update-alert', (message) => {
+            Swal.fire(
+                'Good job!',
+                 message,
+                'success'
+            )
+        })
     </script>
 </body>
 

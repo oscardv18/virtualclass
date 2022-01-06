@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('profile');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/edit-post', function () {
+    return view('posts.edit-post');
+})->name('edit');

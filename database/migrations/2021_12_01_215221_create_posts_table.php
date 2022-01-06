@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title', 100);
             $table->string('description', 255);
-            $table->string('content', 300);
+            $table->text('content');
             # relationships one to many
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')

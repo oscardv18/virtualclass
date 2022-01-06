@@ -2,17 +2,16 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Post;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
 
-class ShowPosts extends Component
+class TablePosts extends Component
 {
     protected $listeners = ['render'];
 
     public function render()
     {
-        $posts = Post::orderBy('id', 'desc')->get();
-        return view('livewire.show-posts', compact('posts'));
+        $posts = DB::table('posts')->orderBy('id', 'desc')->get();
+        return view('livewire.table-posts', compact('posts'));
     }
 }

@@ -15,7 +15,7 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'description', 'content',
+        'title', 'description', 'content', 'user_id'
     ];
 
     // relacion one to many inversa (belongsTo) con la tabla user
