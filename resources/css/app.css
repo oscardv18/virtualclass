@@ -59,3 +59,11 @@ rounded-2xl	border-radius: 1rem; */
 .rounded-2xl {
     border-radius: 1rem;
 }
+
+.bg-green-400 {
+    background-color: #4ade80;
+}
+
+.bg-blue-800 {
+    background-color: #1e40af;
+}

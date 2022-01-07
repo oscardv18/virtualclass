@@ -24,6 +24,12 @@ class CreatePostsTable extends Migration
                     ->references('id')
                     ->on('users')
                     ->onDelete('set null');
+            # relationships one to many
+            $table->unsignedBigInteger('post_type_id')->nullable();
+            $table->foreign('post_type_id')
+                    ->references('id')
+                    ->on('post_type')
+                    ->onDelete('set null');
             $table->timestamps();
         });
     }

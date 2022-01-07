@@ -81,13 +81,8 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    // relacion one to one polimorfica con la tabla image
-    public function image() {
-        return $this->morphOne(Image::class, 'imageable');
-    }
-
     // relacion many to many polimorfica con las tablas courses, notifications y notificable
-    public function courses() {
+    public function notifications() {
         return $this->morphToMany(Notification::class, 'notificable');
     }
 }

@@ -6,6 +6,14 @@
                 <div>
                     <div class="flex flex-row items-center justify-between gap-4">
                         <h4 class="text-gray-900 font-black text-center">{{ $post->title }}</h4>
+                        <span>
+                            Tipo:
+                            @if ($post->post_type_id == 1)
+                                {{ __('Información') }}
+                            @elseif ($post->post_type_id)
+                            {{ __('Evaluación') }}
+                            @endif
+                        </span>
                         @livewire('delete-posts', ['post_id' => $post->id, 'postTitle' => $post->title],
                                     key($post->id))
                         {{-- @livewire('update-posts', ['post_id' => $post->id], key($post->id)) --}}

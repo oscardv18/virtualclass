@@ -4,13 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Post;
 
 class File extends Model
 {
     use HasFactory;
 
-    // relacion one to many polimorfica con la tablas Post y Evaluations
-    public function fileable() {
-        return $this->morphTo();
+    protected $fillable = [
+        'url_file', 'post_id',
+    ];
+
+    // relacion one to many inversa (belongsTo) con la tabla post
+    public function posts() {
+        return $this->belongsTo(Post::class);
     }
 }

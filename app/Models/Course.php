@@ -12,10 +12,6 @@ class Course extends Model
 {
     use HasFactory;
 
-    public function evaluations() {
-        return $this->hasMany(Evaluation::class);
-    }
-
     // relacion many to many con la tabla post
     public function posts() {
         return $this->belongsToMany(Post::class);
