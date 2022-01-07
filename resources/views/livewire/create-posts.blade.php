@@ -1,10 +1,5 @@
 <div>
-    {{-- <x-jet-button wire:click="$set('open', true)">Crear Publicación</x-jet-button> --}}
-    {{-- <span style="color: green"> --}}
-        <i class="fas fa-plus-square fa-1x cursor-pointer" wire:click="$set('open', true)"
-            style="color: rgb(69, 136, 2)"> Crear</i>
-        {{-- <span class="text-gray-900 font-black">Crear Post</span> --}}
-        {{-- </span> --}}
+    <i class="fas fa-plus-square fa-1x cursor-pointer" wire:click="$set('open', true)" style="color: rgb(69, 136, 2)"> Crear</i>
 
     <x-jet-dialog-modal wire:model='open'>
         {{-- Titulo del modal --}}
@@ -89,11 +84,13 @@
 
             </div>
 
-            @if ($files)
-                @foreach ($files as $file)
-                    <img src="{{ $file->temporaryUrl() }}">
-                @endforeach
-            @endif
+            <div class="mt-2">
+                @if ($files)
+                    @foreach ($files as $file)
+                        <img src="{{ $file->temporaryUrl() }}">
+                    @endforeach
+                @endif
+            </div>
             {{-- FIn del file Upload --}}
         </x-slot>
         {{-- pie del modal --}}
