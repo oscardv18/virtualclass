@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\File;
 use App\Models\Post;
 use Livewire\Component;
-use Illuminate\Support\Facades\DB;
 
 class ShowPosts extends Component
 {
@@ -13,6 +13,7 @@ class ShowPosts extends Component
     public function render()
     {
         $posts = Post::orderBy('id', 'desc')->get();
-        return view('livewire.show-posts', compact('posts'));
+        $files = File::orderBy('id', 'desc')->get();
+        return view('livewire.show-posts', compact('posts', 'files'));
     }
 }
