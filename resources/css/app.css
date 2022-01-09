@@ -111,3 +111,27 @@ hover\:border-none:hover {
 .gradient {
     background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
 }
+
+.group:focus .group-focus\:flex {
+    display: flex;
+}
+
+.border-t-gradient {
+    border-left-color: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+
+.border-l-gradient {
+    border-left-color: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+
+.border-b-gradient {
+    border-bottom-color: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+
+.border-r-gradient {
+    border-right-color: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+
+.border-gradient {
+    border-color: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}

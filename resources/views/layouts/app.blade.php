@@ -18,19 +18,22 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body class="font-sans bg-gray-200">
+<body>
 
 
-    {{-- @auth --}}
-        {{-- @livewire('navigation-menu') --}}
-    {{-- @else --}}
+    @auth
+        {{-- <div>
+            {{ $header }}
+        </div> --}}
+        <main>
+            {{ $slot }}
+        </main>
+    @else
         <x-navigation-menu />
-    {{-- @endauth --}}
-
-    {{-- Banner principal --}}
-    <main>
-        {{ $slot }}
-    </main>
+        <div>
+            {{ $bodyisAuth }}
+        </div>
+    @endauth
 
     @stack('modals')
 
@@ -143,6 +146,7 @@
             return false;
         }
     </script>
+
 </body>
 
 </html>
