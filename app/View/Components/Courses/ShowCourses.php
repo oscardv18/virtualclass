@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\Dashboard;
+namespace App\View\Components\Courses;
 
 use Illuminate\View\Component;
 
-class Content extends Component
+class ShowCourses extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class Content extends Component
      */
     public function render()
     {
-        return view('components.dashboard.content');
+        return view('components.courses.show-courses');
     }
 }

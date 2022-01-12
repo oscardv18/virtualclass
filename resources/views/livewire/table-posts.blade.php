@@ -1,72 +1,64 @@
-<div>
-    <div class="flex flex-col">
-        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
-                <div class="overflow-hidden">
-                    <table class="w-full text-center rounded-xl">
-                        <thead class="border-b bg-gray-800">
-                            <tr>
-                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Id
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Titulo
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Description
-                                </th>
-                                {{-- <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Contenido
-                                </th> --}}
-                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Creador
-                                </th>
-                                {{-- <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Fecha
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Actualizado
-                                </th> --}}
-                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Acciones
-                                </th>
-                            </tr>
-                        </thead class="border-b">
-                        <tbody>
-                            @foreach ($posts as $post)
-                            <tr class="bg-white border-b">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                    {{ $post->id }}
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    {{ $post->title }}
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    {{ $post->description }}
-                                </td>
-                                {{-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    {{ $post->content }}
-                                </td> --}}
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    {{ $post->user_id }}
-                                </td>
-                                {{-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    {{ $post->created_at }}
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    {{ $post->updated_at }}
-                                </td> --}}
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    {{-- @livewire('delete-posts', ['post_id' => $post->id, 'postTitle' => $post->title],
-                                    key($post->id)) --}}
-                                    @livewire('update-posts', ['post_id' => $post->id], key($post->id))
-                                </td>
-                            </tr class="bg-white border-b">
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="overflow-hidden bg-white border-b border-gray-200 shadow sm:rounded-lg">
+    <table class="min-w-full divide-y divide-gray-200">
+        <thead>
+            <tr>
+                <th
+                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase bg-gray-50">
+                    <div class="flex cursor-pointer">
+                        <span class="mr-2">ID</span>
+                    </div>
+                </th>
+                <th
+                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase bg-gray-50">
+                    <div class="flex cursor-pointer">
+                        <span class="mr-2">TITULO</span>
+                    </div>
+                </th>
+                <th
+                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase bg-gray-50">
+                    <div class="flex cursor-pointer">
+                        <span class="mr-2">ID DEL CREADOR</span>
+                    </div>
+                </th>
+                <th
+                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase bg-gray-50">
+                    <div class="flex cursor-pointer">
+                        <span class="mr-2">ID DE TIPO</span>
+                    </div>
+                </th>
+                <th
+                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase bg-gray-50">
+                    <div class="flex cursor-pointer">
+                        <span class="mr-2">Acciones</span>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+            @foreach ($posts as $post)
+                <tr>
+                    <td class="px-6 py-4 text-sm leading-5 whitespace-no-wrap">
+                        <p>{{ $post->id }}</p>
+                        {{-- <p class="text-xs text-gray-400">PC & Laptop
+                        </p> --}}
+                    </td>
+                    <td class="px-6 py-4 text-sm leading-5 whitespace-no-wrap">
+                        <p>{{ $post->title }}</p>
+                    </td>
+                    <td class="px-6 py-4 text-sm leading-5 whitespace-no-wrap">
+                        <p>{{ $post->user_id }}</p>
+                    </td>
+                    <td class="px-6 py-4 text-sm leading-5 whitespace-no-wrap">
+                        <p>{{ $post->post_type_id }}</p>
+                    </td>
+                    <td class="px-6 py-4 text-sm leading-5 whitespace-no-wrap">
+                        <div class="flex space-x-4">
+                            @livewire('update-posts', ['id' => $post->id, 'title' => $post->title, 'description' => $post->description, 'content' => $post->content], key($post->id))
+                            @livewire('delete-posts', ['post_id' => $post->id, 'postTitle' => $post->title], key($post->id))
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>

@@ -9,20 +9,18 @@ use Illuminate\Support\Facades\Auth;
 
 class UpdatePosts extends Component
 {
-    public $open = false;
-    public $post_id;
-    public $user_id;
-    public $title;
-    public $description;
-    public $content;
+    public $open = false, $post_id, $user_id, $title, $description, $content;
     protected $rules = [
         'title' => 'required',
         'description' => 'required|max:355',
         'content' => 'required'
     ];
 
-    public function mount($post_id) {
-        $this->post_id = $post_id;
+    public function mount($id, $title, $description, $content) {
+        $this->post_id = $id;
+        $this->title = $title;
+        $this->description = $description;
+        $this->content = $content;
     }
 
     public function edit(){

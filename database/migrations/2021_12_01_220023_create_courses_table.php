@@ -18,6 +18,12 @@ class CreateCoursesTable extends Migration
             $table->string('name', 100);
             $table->string('period', 100);
             $table->timestamps();
+            # relationships one to many
+            $table->unsignedBigInteger('area_id')->nullable();
+            $table->foreign('area_id')
+                    ->references('id')
+                    ->on('area')
+                    ->onDelete('set null');
         });
     }
 

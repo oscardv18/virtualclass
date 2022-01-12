@@ -1,10 +1,10 @@
 @php
 $navs_links = [
-[
-'name' => 'Mi Perfil',
-'route' => route('profile'),
-'active' => request()->routeIs('profile'),
-],
+// [
+// 'name' => 'Mi Perfil',
+// 'route' => route('profile'),
+// 'active' => request()->routeIs('profile'),
+// ],
 [
 'name' => 'Home',
 'route' => '#',

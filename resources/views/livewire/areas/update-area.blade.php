@@ -1,6 +1,4 @@
 <div>
-    {{-- <i class="cursor-pointer fas fa-pen-square fa-1x" style="color: rgb(224, 221, 0)"> --}}
-        {{-- Editar</i> --}}
     <a href="#" class="text-blue-500 hover:text-blue-600" wire:click="$set('open', true)">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
@@ -15,9 +13,9 @@
             Editar Post
         </x-slot>
         <x-slot name="content">
-            {{-- SECCION DEL TITULO --}}
-            <x-jet-label class="mt-4" for="title" value="{{ __('Titulo:') }}" />
-            <x-jet-input class="w-full" id="title" name="title" type="text" wire:model.defer='title' required />
+            {{-- SECCION DEL NOMBRE --}}
+            <x-jet-label class="mt-4" for="area_name" value="{{ __('Nombre:') }}" />
+            <x-jet-input class="w-full" id="area_name" name="area_name" type="text" wire:model.defer='area_name' required />
             <x-jet-input-error for="title" />
 
             {{-- SECCION DE LA DESCRIPCION --}}
@@ -25,13 +23,6 @@
             <x-jet-input class="w-full" id="description" name="description" type="text" wire:model.defer='description'
                 required />
             <x-jet-input-error for="description" />
-
-            {{-- SECCION DEL CONTENIDO --}}
-            <x-jet-label class="mt-4" for="content" value="{{ __('Contenido:') }}" />
-            <textarea
-                class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                name="content" id="content" rows="6" wire:model.defer='content' required></textarea>
-            <x-jet-input-error for="content" />
         </x-slot>
         <x-slot name="footer">
             <x-jet-secondary-button wire:click="$set('open', false)">

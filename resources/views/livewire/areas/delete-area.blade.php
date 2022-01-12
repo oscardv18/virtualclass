@@ -1,5 +1,4 @@
 <div>
-    {{-- <i class="cursor-pointer fas fa-trash fa-1x" style="color: rgb(226, 31, 25)"></i> --}}
     <a href="#" class="text-red-500 hover:text-red-600" wire:click="$set('open', true)" >
         <svg xmlns="http://www.w3.org/2000/svg"
             class="w-5 h-5 ml-3 mr-1" fill="none"
@@ -8,19 +7,19 @@
                 stroke-linejoin="round" stroke-width="2"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
         </svg>
-        <p>Delete</p>
+        <p>Eliminar</p>
     </a>
 
     <x-jet-dialog-modal wire:model='open'>
         <x-slot name="title">
-            Eliminar Post
+            Eliminar Area
         </x-slot>
         <x-slot name="content">
             <x-jet-label class="mt-4" for="title"
                 value="{{ __('Estas seguro que deseas eliminar el post seleccionado?:') }}" />
 
-            <span>{{ $post_id }}</span>
-            <span>{{ $post_title }}</span>
+            <span>{{ $area_id }}</span>
+            <span>{{ $area_name }}</span>
         </x-slot>
         <x-slot name="footer">
             <x-jet-secondary-button wire:click="$set('open', false)">

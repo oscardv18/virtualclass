@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\Dashboard;
+namespace App\View\Components\Posts;
 
 use Illuminate\View\Component;
 
-class Sidebar extends Component
+class ShowPosts extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class Sidebar extends Component
      */
     public function render()
     {
-        return view('components.dashboard.sidebar');
+        return view('components.posts.show-posts');
     }
 }

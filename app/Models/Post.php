@@ -22,7 +22,7 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    // relacion one to many con la tabla video
+    // relacion one to many con la tabla file
     public function file() {
         return $this->hasMany(File::class);
     }

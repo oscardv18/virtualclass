@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Livewire\Areas;
+
+use Livewire\Component;
+use Illuminate\Support\Facades\DB;
+use App\Models\Area;
+
+class CreateArea extends Component
+{
+
+    public $open = false;
+    public $area_name, $description;
+
+    protected $rules = [
+        'area_name' => 'required',
+        'description' => 'required'
+    ];
+
+    public function save() {
+        Area::create([
+            'area_name' => $this->area_name,
+            'description' => $this->description
+        ]);
+        $this->emit('alert', 'Excelente, Post creado correctamente');
+        $this->reset(['area_name', 'description', 'open']);
+        $this->emit('render');
+    }
+
+    public function render()
+    {
+        $areas = DB::table('area')->get();
+        return view('livewire.areas.create-area', compact('areas'));
+    }
+}
