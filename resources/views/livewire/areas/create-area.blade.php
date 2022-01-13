@@ -32,8 +32,8 @@
                 <x-jet-danger-button wire:loading.class="hidden" wire:click='save'>
                     {{ __('Crear') }}
                     </x-jet-button>
-                    <div wire:loading wire:target="insert">
-                        <span>Creando Post...</span>
+                    <div wire:loading wire:target="save">
+                        <span>Creando Area...</span>
                     </div>
         </x-slot>
     </x-jet-dialog-modal>

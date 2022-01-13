@@ -56,13 +56,6 @@
                 </section>
                 <section class="bg-white dark:bg-gray-900">
                     <div class="container px-6 py-5 mx-auto">
-                        {{-- <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore our
-                            <br> awesome <span class="underline decoration-blue-500">Components</span></h1>
-
-                        <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
-                        </p> --}}
-
                         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
                             <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
                                 <span class="inline-block text-blue-500 dark:text-blue-400">

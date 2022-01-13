@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Evaluation;
 use App\Models\Post;
 use App\Models\Notification;
 use App\Models\Area;
@@ -12,6 +11,12 @@ use App\Models\Area;
 class Course extends Model
 {
     use HasFactory;
+
+    protected $table = 'courses';
+
+    protected $fillable = [
+        'name', 'period', 'area_id'
+    ];
 
     // relacion many to many con la tabla post
     public function posts() {

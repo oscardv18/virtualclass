@@ -83,6 +83,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return view('components.asig.table-asig');
     })->name('table-asig');
 
+    # Ruta para el contenido de las clases
+
+    Route::get('dashboard/asig/{course_name}/period/{course_period}', function ($course_name, $course_period) {
+        return view('components.asig.asig-body', compact('course_name', 'course_period'));
+    })->name('content');
+
     ############# RUTA PARA LAS SECCIONES #################
     Route::get('/dashboard/sections', function () {
         return view('components.sections.sections');
