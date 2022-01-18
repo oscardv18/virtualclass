@@ -10,6 +10,7 @@ use App\Models\Permission;
 class Rol extends Model
 {
     use HasFactory;
+    protected $table = "rols";
 
     // relación one to many con users table
     public function user() {

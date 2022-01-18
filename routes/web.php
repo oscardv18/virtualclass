@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactanosMailable;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +97,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     })->name('sections');
 
 });
+
+Route::get('/contactanos', function () {
+    $email = new ContactanosMailable;
+    Mail::to('oscarddiazvelasquez@gmail.com')->send($email);
+        return 'Correo Enviado';
+})->name('contact');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');

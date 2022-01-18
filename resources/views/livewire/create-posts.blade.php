@@ -85,14 +85,6 @@
                 </div>
 
             </div>
-
-            <div class="mt-2">
-                @if ($files)
-                    @foreach ($files as $file)
-                        <img src="{{ $file->temporaryUrl() }}">
-                    @endforeach
-                @endif
-            </div>
             {{-- FIn del file Upload --}}
         </x-slot>
         {{-- pie del modal --}}

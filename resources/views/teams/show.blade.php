@@ -1,23 +1,25 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Team Settings') }}
-        </h2>
-    </x-slot>
+    <div class="flex h-screen bg-gray-800 " :class="{ 'overflow-hidden': isSideMenuOpen }">
+        <x-dashboard.aside-dash />
+        <x-dashboard.main-template>
+            <x-slot name="content">
+                <div>
+                    <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+                        @livewire('teams.update-team-name-form', ['team' => $team])
 
-    <div>
-        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            @livewire('teams.update-team-name-form', ['team' => $team])
+                        @livewire('teams.team-member-manager', ['team' => $team])
 
-            @livewire('teams.team-member-manager', ['team' => $team])
+                        @if (Gate::check('delete', $team) && ! $team->personal_team)
+                        <x-jet-section-border />
 
-            @if (Gate::check('delete', $team) && ! $team->personal_team)
-                <x-jet-section-border />
-
-                <div class="mt-10 sm:mt-0">
-                    @livewire('teams.delete-team-form', ['team' => $team])
+                        <div class="mt-10 sm:mt-0">
+                            @livewire('teams.delete-team-form', ['team' => $team])
+                        </div>
+                        @endif
+                    </div>
                 </div>
-            @endif
-        </div>
+            </x-slot>
+        </x-dashboard.main-template>
     </div>
+
 </x-app-layout>
