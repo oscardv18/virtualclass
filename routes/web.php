@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactanosMailable;
@@ -27,18 +28,20 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     ############## RUTAS PARA LOS POSTS ###################
 
+    Route::resource('/dashboard/posts', PostController::class);
+
     # Ruta de la tabla de administracion de los posts
-    Route::get('/dashboard/posts/table', function () {
-        return view('components.posts.table-posts');
-    })->name('table');
-    # Ruta para ver los posts
-    Route::get('/dashboard/posts/show', function () {
-        return view('components.posts.show-posts');
-    })->name('show');
-    #Ruta para crear posts
-    Route::get('/dashboard/posts/create', function () {
-        return view('components.posts.creation-posts');
-    })->name('create');
+    // Route::get('/dashboard/posts/table', function () {
+    //     return view('components.posts.table-posts');
+    // })->name('table');
+    // # Ruta para ver los posts
+    // Route::get('/dashboard/posts/show', function () {
+    //     return view('components.posts.show-posts');
+    // })->name('show');
+    // #Ruta para crear posts
+    // Route::get('/dashboard/posts/create', function () {
+    //     return view('components.posts.creation-posts');
+    // })->name('create');
 
     ############# RUTAS PARA LAS AREAS #######################
 

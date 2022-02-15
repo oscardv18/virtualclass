@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\File;
+use App\Models\Team;
 use App\Models\User;
 use App\Models\Course;
-use App\Models\File;
 use App\Models\PostType;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Post extends Model
 {
@@ -35,5 +36,9 @@ class Post extends Model
     // relacion many to many con la tabla course
     public function courses() {
         return $this->belongsToMany(Course::class);
+    }
+
+    public function teams() {
+        return $this->belongsTo(Team::class);
     }
 }

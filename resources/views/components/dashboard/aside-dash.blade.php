@@ -73,7 +73,7 @@
                                         <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
                                             <div class="flex items-center">
                                                 <i class="fas fa-binoculars"></i>
-                                                <a href="{{ route('show') }}"
+                                                <a href="{{ route('posts.index') }}"
                                                     class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Ver</a>
                                             </div>
                                         </div>
@@ -82,12 +82,12 @@
                                         <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
                                             <div class="flex items-center">
                                                 <i class="fas fa-plus-square"></i>
-                                                <a href="{{ route('create') }}"
+                                                <a href="{{ route('posts.create') }}"
                                                     class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Crear</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="px-2 py-1 text-white transition-colors duration-150">
+                                    {{-- <li class="px-2 py-1 text-white transition-colors duration-150">
                                         <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
                                             <div class="flex items-center">
                                                 <i class="fas fa-table"></i>
@@ -95,210 +95,7 @@
                                                     class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Administrar</a>
                                             </div>
                                         </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="relative px-2 py-1" x-data="{ Open : false  }">
-                            <div class="inline-flex items-center justify-between w-full text-base font-semibold text-gray-500 transition-colors duration-150 cursor-pointer hover:text-yellow-400"
-                                x-on:click="Open = !Open" x-on:click.away="Open = false">
-                                <span
-                                    class="inline-flex items-center text-sm font-semibold text-white hover:text-green-400">
-                                    <i class="fas fa-layer-group"></i>
-                                    <span class="ml-4">CARRERAS</span>
-                                </span>
-                                <svg xmlns="http://www.w3.org/2000/svg" x-show="!Open" class="w-4 h-4 ml-1 text-white"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 19l-7-7 7-7" />
-                                </svg>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" x-show="Open" class="w-4 h-4 ml-1 text-white"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </div>
-
-                            <div x-show.transition="Open" style="display:none;">
-                                <ul x-transition:enter="transition-all ease-in-out duration-300"
-                                    x-transition:enter-start="opacity-25 max-h-0"
-                                    x-transition:enter-end="opacity-100 max-h-xl"
-                                    x-transition:leave="transition-all ease-in-out duration-300"
-                                    x-transition:leave-start="opacity-100 max-h-xl"
-                                    x-transition:leave-end="opacity-0 max-h-0"
-                                    class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium bg-green-400 rounded-md shadow-inner"
-                                    aria-label="submenu">
-
-                                    <li class="px-2 py-1 text-white transition-colors duration-150">
-                                        <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
-                                            <div class="flex items-center">
-                                                <i class="fas fa-binoculars"></i>
-                                                <a href="{{ route('show-area') }}"
-                                                    class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Ver
-                                                    Carreras</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="px-2 py-1 text-white transition-colors duration-150">
-                                        <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
-                                            <div class="flex items-center">
-                                                <i class="fas fa-plus-square"></i>
-                                                <a href="{{ route('create-area') }}"
-                                                    class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Crear
-                                                    Carreras</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="px-2 py-1 text-white transition-colors duration-150">
-                                        <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
-                                            <div class="flex items-center">
-                                                <i class="fas fa-table"></i>
-                                                <a href="{{ route('table-area') }}"
-                                                    class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Administrar</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="relative px-2 py-1" x-data="{ Open : false  }">
-                            <div class="inline-flex items-center justify-between w-full text-base font-semibold text-gray-500 transition-colors duration-150 cursor-pointer hover:text-yellow-400"
-                                x-on:click="Open = !Open" x-on:click.away="Open = false">
-                                <span
-                                    class="inline-flex items-center text-sm font-semibold text-white hover:text-green-400">
-                                    <i class="fas fa-cubes"></i>
-                                    <span class="ml-4">CLASES</span>
-                                </span>
-                                <svg xmlns="http://www.w3.org/2000/svg" x-show="!Open" class="w-4 h-4 ml-1 text-white"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 19l-7-7 7-7" />
-                                </svg>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" x-show="Open" class="w-4 h-4 ml-1 text-white"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </div>
-
-                            <div x-show.transition="Open" style="display:none;">
-                                <ul x-transition:enter="transition-all ease-in-out duration-300"
-                                    x-transition:enter-start="opacity-25 max-h-0"
-                                    x-transition:enter-end="opacity-100 max-h-xl"
-                                    x-transition:leave="transition-all ease-in-out duration-300"
-                                    x-transition:leave-start="opacity-100 max-h-xl"
-                                    x-transition:leave-end="opacity-0 max-h-0"
-                                    class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium bg-green-400 rounded-md shadow-inner"
-                                    aria-label="submenu">
-
-                                    <li class="px-2 py-1 text-white transition-colors duration-150">
-                                        <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
-                                            <div class="flex items-center">
-                                                <i class="fas fa-binoculars"></i>
-                                                <a href="{{ route('show-courses') }}"
-                                                    class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Ver
-                                                    Clases</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="px-2 py-1 text-white transition-colors duration-150">
-                                        <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
-                                            <div class="flex items-center">
-                                                <i class="fas fa-plus-square"></i>
-                                                <a href="{{ route('create-courses') }}"
-                                                    class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Crear
-                                                    Clases</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="px-2 py-1 text-white transition-colors duration-150">
-                                        <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
-                                            <div class="flex items-center">
-                                                <i class="fas fa-table"></i>
-                                                <a href="{{ route('table-courses') }}"
-                                                    class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Administrar</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="relative px-2 py-1">
-                                <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 cursor-pointer hover:text-green-500"
-                                href="{{ route('show-courses') }}">
-                                <i class="fab fa-atlassian"></i>
-                                <span class="ml-4">ASIGNATURAS</span>
-                            </a>
-                        </li>
-                        <li class="relative px-2 py-1 ">
-                            <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 cursor-pointer hover:text-green-500"
-                                href="{{ route('sections') }}">
-                                <i class="fas fa-puzzle-piece"></i>
-                                <span class="ml-4">SECCIONES</span>
-                            </a>
-                        </li>
-                        <li class="relative px-2 py-1" x-data="{ Open : false  }">
-                            <div class="inline-flex items-center justify-between w-full text-base font-semibold text-gray-500 transition-colors duration-150 cursor-pointer hover:text-yellow-400"
-                                x-on:click="Open = !Open" x-on:click.away="Open = false">
-                                <span
-                                    class="inline-flex items-center text-sm font-semibold text-white hover:text-green-400">
-                                    <i class="fas fa-university"></i>
-                                    <span class="ml-4">INSTITUCIONES</span>
-                                </span>
-                                <svg xmlns="http://www.w3.org/2000/svg" x-show="!Open" class="w-4 h-4 ml-1 text-white"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 19l-7-7 7-7" />
-                                </svg>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" x-show="Open" class="w-4 h-4 ml-1 text-white"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </div>
-
-                            <div x-show.transition="Open" style="display:none;">
-                                <ul x-transition:enter="transition-all ease-in-out duration-300"
-                                    x-transition:enter-start="opacity-25 max-h-0"
-                                    x-transition:enter-end="opacity-100 max-h-xl"
-                                    x-transition:leave="transition-all ease-in-out duration-300"
-                                    x-transition:leave-start="opacity-100 max-h-xl"
-                                    x-transition:leave-end="opacity-0 max-h-0"
-                                    class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium bg-green-400 rounded-md shadow-inner"
-                                    aria-label="submenu">
-
-                                    <li class="px-2 py-1 text-white transition-colors duration-150">
-                                        <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
-                                            <div class="flex items-center">
-                                                <i class="fas fa-binoculars"></i>
-                                                <a href="{{ route('show-area') }}"
-                                                    class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Ver
-                                                    Instituciones</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="px-2 py-1 text-white transition-colors duration-150">
-                                        <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
-                                            <div class="flex items-center">
-                                                <i class="fas fa-plus-square"></i>
-                                                <a href="{{ route('create-area') }}"
-                                                    class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Crear
-                                                    Instituciones</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="px-2 py-1 text-white transition-colors duration-150">
-                                        <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
-                                            <div class="flex items-center">
-                                                <i class="fas fa-table"></i>
-                                                <a href="{{ route('table-area') }}"
-                                                    class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Asignaturas</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </li>
@@ -391,7 +188,7 @@
                                         <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
                                             <div class="flex items-center">
                                                 <i class="fas fa-binoculars"></i>
-                                                <a href="{{ route('show') }}"
+                                                <a href="{{ route('posts.index') }}"
                                                     class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Ver</a>
                                             </div>
                                         </div>
@@ -400,7 +197,7 @@
                                         <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
                                             <div class="flex items-center">
                                                 <i class="fas fa-plus-square"></i>
-                                                <a href="{{ route('create') }}"
+                                                <a href="{{ route('posts.create') }}"
                                                     class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Crear</a>
                                             </div>
                                         </div>
@@ -409,7 +206,7 @@
                                         <div class="px-1 rounded-md hover:text-gray-800 hover:bg-green-100">
                                             <div class="flex items-center">
                                                 <i class="fas fa-table"></i>
-                                                <a href="{{ route('table') }}"
+                                                <a href="{{ route('posts.create') }}"
                                                     class="w-full ml-2 text-sm font-semibold text-white hover:text-gray-800">Administrar</a>
                                             </div>
                                         </div>

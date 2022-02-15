@@ -29,10 +29,8 @@ class CreateInformationsTable extends Migration
                   ->onUpdate('cascade');
 
             //relationships one to one
-
             # Foreign rules fot address table
             $table->unsignedBigInteger('address_id')->unique();
-
             # Foreign key
             $table->foreign('address_id')
                   ->references('id')

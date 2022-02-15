@@ -31,6 +31,16 @@ class CreatePostsTable extends Migration
                     ->on('post_type')
                     ->onDelete('set null');
             $table->timestamps();
+
+            # relationship with teams table (one to one)
+            # Foreign rules fot address table
+            $table->unsignedBigInteger('team_id')->unique()->nullable();
+            # Foreign key
+            $table->foreign('team_id')
+                  ->references('id')
+                  ->on('teams')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
         });
     }
 
